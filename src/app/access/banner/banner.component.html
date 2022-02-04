@@ -1,0 +1,4 @@
+<section class="banner-background">
+  <!-- a conexão com a animação deve ser feita com [@nomedotrigger]="attributo que define o estado" -->
+  <img *ngFor="let img of allImages" [src]="img.url" [alt]="img.url" [@banner]="img.state">
+</section>
