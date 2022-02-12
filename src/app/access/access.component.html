@@ -1,12 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 d-flex justify-content-end">
+    <div class="col-sm-6 d-flex justify-content-end" [@banner-animation]="createdState">
       <app-banner></app-banner>
     </div>
-
-    <div class="col-sm-6 d-flex justify-content-start">
-		<!-- <app-login></app-login> -->
-    <app-register></app-register>
-    </div>  
+    <div class="col-sm-6 d-flex justify-content-start" style="margin-top: 20px;">
+      <section *ngIf="showRegisterComponent else login">
+        <!-- Para utilizar callbacks durante as animações, utilize o (@nomeDaAnimação.start ou .done) -->
+        <div [@login-animation]="createdState" (@login-animation.start)="animationStart()"
+          (@login-animation.done)="animationEnd()">
+          <app-register (registerEmmiter)="toggleShowComponent($event)"></app-register>
+        </div>
+      </section>
+      <ng-template #login>
+        <div [@login-animation]="createdState" (@login-animation.start)="animationStart()"
+        (@login-animation.done)="animationEnd()">
+          <app-login (loginEmmiter)="toggleShowComponent($event)"></app-login>
+        </div>
+      </ng-template>
+    </div>
   </div>
 </div>
