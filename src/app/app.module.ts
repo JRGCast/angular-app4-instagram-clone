@@ -11,6 +11,9 @@ import { BannerComponent } from './access/banner/banner.component';
 import { RegisterComponent } from './access/register/register.component';
 import { LoginComponent } from './access/login/login.component';
 import { UserAuthentication } from 'src/services/auth.service';
+import { HomeComponent } from './home/home.component';
+import { PublicationsComponent } from './home/publications/publications.component';
+import { RouterGuard } from 'src/services/approuter-guard.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { UserAuthentication } from 'src/services/auth.service';
     BannerComponent,
     RegisterComponent,
     LoginComponent,
+    HomeComponent,
+    PublicationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { UserAuthentication } from 'src/services/auth.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [UserAuthentication],
+  providers: [UserAuthentication, RouterGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

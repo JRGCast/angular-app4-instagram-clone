@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
       state('created', style({ opacity: 1 })),
       transition('void => created', [
         style({ opacity: 0, transform: 'translate(80px, 0)' }),
-        animate('4s 0s ease-in-out', keyframes([
+        animate('2s 0s ease-in-out', keyframes([
           style({ transform: 'translate(80px, 20px)', opacity: 1, offset: 0 }),
           style({ transform: 'translate(-80px, 40px)', opacity: 0, offset: 0.3 }),
           style({ transform: 'translate(100px, 60px)', opacity: 1, offset: 0.6 }),

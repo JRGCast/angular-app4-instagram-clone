@@ -35,7 +35,7 @@ export class BannerComponent implements OnInit {
       if (this.allImages[i].state === "shown") {
         this.allImages[i].state = "hidden"
         nextImgIndex = i === 4 ? 0 : i + 1
-        console.log('test')
+        console.log('image passed')
         break
       }
     }
