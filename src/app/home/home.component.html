@@ -2,12 +2,13 @@
   <div class="container">
     <div class="logo"></div>
     <div style="display: flex; justify-content: space-between; width: 5em;">
-      <div class="add-post"></div>
-      <a  (click)="logOut()">Sair</a>
+      <div class="add-post" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></div>
+      <a href="" (click)="logOut()">Sair</a>
     </div>
   </div>
 </nav>
 <br /><br /><br />
 <div class="container">
   <app-publications></app-publications>
+  <app-new-publications></app-new-publications>
 </div>

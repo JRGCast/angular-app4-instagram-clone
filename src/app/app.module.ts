@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { UserAuthentication } from 'src/services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { PublicationsComponent } from './home/publications/publications.component';
 import { RouterGuard } from 'src/services/approuter-guard.service';
+import { NewPublicationsComponent } from './new-publications/new-publications.component';
+import { DAOService } from 'src/services/dao.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { RouterGuard } from 'src/services/approuter-guard.service';
     LoginComponent,
     HomeComponent,
     PublicationsComponent,
+    NewPublicationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { RouterGuard } from 'src/services/approuter-guard.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [UserAuthentication, RouterGuard],
+  providers: [UserAuthentication, RouterGuard, DAOService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
