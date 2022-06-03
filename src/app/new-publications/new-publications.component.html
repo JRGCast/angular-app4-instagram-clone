@@ -11,16 +11,17 @@
         <div class="modal-body">
           <input type="text" placeholder="Insira o título da publicação" class="form-control"
             formControlName="newPublicationTitle">
-            <input type="file" class="form-control"
-            accept="image/*"
-            formControlName="newPublicationFileUpload"
-            (change)="prepareUpload($event)"
-            >
+          <input type="file" class="form-control" accept="image/*" formControlName="newPublicationFileUpload"
+            (change)="prepareUpload($event)">
         </div>
+        <p *ngIf="currPostProgressState !== 'completed' else completedUpload">{{currPostProgressPercentage}}</p>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Publicar</button>
+          <button type="submit" class="btn btn-primary">Publicar</button>
         </div>
+        <ng-template #completedUpload>
+          <p *ngIf="currPostProgressState === 'completed' ">Upload completed!</p>
+        </ng-template>
       </form>
     </div>
   </div>

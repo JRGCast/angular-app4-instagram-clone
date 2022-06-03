@@ -16,6 +16,7 @@ import { PublicationsComponent } from './home/publications/publications.componen
 import { RouterGuard } from 'src/services/approuter-guard.service';
 import { NewPublicationsComponent } from './new-publications/new-publications.component';
 import { DAOService } from 'src/services/dao.service';
+import { ProgressService } from 'src/services/progress.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { DAOService } from 'src/services/dao.service';
     BrowserAnimationsModule,
     ReactiveFormsModule,
   ],
-  providers: [UserAuthentication, RouterGuard, DAOService],
+  providers: [UserAuthentication, RouterGuard, DAOService, ProgressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
